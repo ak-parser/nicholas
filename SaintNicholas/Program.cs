@@ -35,11 +35,11 @@ namespace SaintNicholas
 
                     do
                         Console.Write("Enter child's name: ");
-                    while (!Regex.IsMatch(name = Console.ReadLine(), @"\w*"));
+                    while (!Regex.IsMatch(name = Console.ReadLine(), @"^[A-Za-z]+$"));
 
                     do
                         Console.Write("Enter child's gender: (Male | Female): ");
-                    while (!Enum.TryParse(Console.ReadLine(), out gender));
+                    while (!Enum.TryParse(Console.ReadLine(), out gender) || !Enum.IsDefined(typeof(Gender), gender));
 
                     do
                         Console.Write("Enter child's number of good actions: ");

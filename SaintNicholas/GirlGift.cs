@@ -12,7 +12,7 @@ namespace SaintNicholas
             set
             {
                 if (value.GetType() != typeof(GirlToy) && value.GetType() != typeof(Punishment))
-                    throw new ArgumentException($"Toy type must be {_toy.GetType().Name} or {nameof(Punishment)} type");
+                    throw new ArgumentException($"Toy type must be {nameof(GirlToy)} or {nameof(Punishment)} type");
                 _toy = value;
             }
         }
@@ -22,7 +22,7 @@ namespace SaintNicholas
             set
             {
                 if (value.GetType() != typeof(Sweet) && value.GetType() != typeof(Punishment))
-                    throw new ArgumentException($"Sweet type must be {_sweet.GetType().Name} or {nameof(Punishment)} type");
+                    throw new ArgumentException($"Sweet type must be {nameof(Sweet)} or {nameof(Punishment)} type");
                 _sweet = value;
             }
         }
@@ -32,7 +32,7 @@ namespace SaintNicholas
             set
             {
                 if (value == null || value == "")
-                    throw new ArgumentException($"Wish cannot be null");
+                    throw new ArgumentException($"Wish cannot be empty");
                 _wish = value;
             }
         }
